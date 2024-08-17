@@ -4,8 +4,9 @@ import Link from "next/link";
 export default function Home() {
   return (
     <div>
-      <h1>Home Page</h1>
-      <Link href={"/useActionStateUseTransition"}>useActionStateUseTransition</Link>
+      <div className='mt-4 ml-10'>
+        <Link href={"/useActionStateUseTransition"}>useActionStateUseTransitionへ移動</Link>
+      </div>
     </div>
   );
 }
