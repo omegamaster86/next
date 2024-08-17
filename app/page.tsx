@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div>
       <h1>Home Page</h1>
-      <Link href={"/useActionStateUseTransition"}>移動</Link>
+      <Link href={"/useActionStateUseTransition"}>useActionStateUseTransition</Link>
     </div>
   );
 }
