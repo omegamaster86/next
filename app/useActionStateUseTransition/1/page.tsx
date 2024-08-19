@@ -78,6 +78,7 @@ const HeavyTab = memo(function HeavyTab() {
 
 function SlowListItem({ index }: { index: number }) {
   const startTime = performance.now();
+  // 各SlowListItemのレンダリングが意図的に遅延されます。このような遅延は、パフォーマンスの問題が発生する状況をシミュレートするために使用される
   while (performance.now() - startTime < 1) {}
   return <li>#{index + 1}</li>;
 }
