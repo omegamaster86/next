@@ -1,7 +1,21 @@
-import React from 'react'
+import type React from 'react'
+import Link from "next/link";
 
-export default function UseActionStateUseTransition (){
+export default function UseActionStateUseTransition ({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <div>useActionStateUseTransition</div>
-  )
+    <html lang="ja">
+      <body>
+        <div className="space-x-4 p-4">
+          {[1, 2, 3, 4].map((v) => (
+            <Link key={v} href={`/useActionStateUseTransition/${v}`}>
+              ページ{v}
+            </Link>
+          ))}
+        </div>
+        <div>{children}</div>
+      </body>
+    </html>
+  );
 }
