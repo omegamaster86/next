@@ -18,7 +18,7 @@ export default function Home() {
         </Card>
         <Card maxW='sm' className='mt-5'>
           <CardHeader>
-            <Heading size='md'><Link href={"/state-Manegement"}>state-Manegementへ移動</Link></Heading>
+            <Heading size='md'><Link href={"/useState"}>useStateへ移動</Link></Heading>
           </CardHeader>
         </Card>
       </div>
