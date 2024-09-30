@@ -1,6 +1,6 @@
 'use client'
 
-import React, { ComponentProps } from 'react'
+import React, { type ComponentProps } from 'react'
 import { Header } from '../components/header'
 import { Button, FormControl, Input} from '@chakra-ui/react'
 
