@@ -1,14 +1,24 @@
 'use client'
 
-import React, { type ComponentProps } from 'react'
+import React, { type ComponentProps, useState } from 'react'
 import { Header } from '../components/header'
 import { Button, FormControl, Input} from '@chakra-ui/react'
+import type { Todo } from '../types';
+
+const TODOS: Todo[] = [
+  { id: 1, text: "foo1", isDone: false },
+  { id: 2, text: "foo2", isDone: true },
+];
 
 const add = () => {
+  const [todos, setTodos] = useState<Todo[]>(TODOS);
   const handleSubmit: ComponentProps<"form">["onSubmit"] = (e) => {
     e.preventDefault();
     const text = e.currentTarget.text.value;
-    console.log(text);
+    setTodos((prevTodos) => {
+      const newTodo = { id: prevTodos.length + 1, text, isDone: false};
+      return [ ...prevTodos,newTodo ];
+    });
     e.currentTarget.reset();
   }
 
