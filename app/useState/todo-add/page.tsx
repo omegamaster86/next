@@ -1,17 +1,17 @@
 'use client'
 
-import React, { type ComponentProps, useState } from 'react'
+import React, { type ComponentProps } from 'react'
 import { Header } from '../components/header'
 import { Button, FormControl, Input} from '@chakra-ui/react'
 import type { Todo } from '../types';
+import { NextPage } from 'next';
 
-const TODOS: Todo[] = [
-  { id: 1, text: "foo1", isDone: false },
-  { id: 2, text: "foo2", isDone: true },
-];
+type Props = {
+  setTodos: React.Dispatch<React.SetStateAction<Todo[]>>;
+}
 
-const add = () => {
-  const [todos, setTodos] = useState<Todo[]>(TODOS);
+
+const Add: NextPage<Props> = ({ setTodos }) => {
   const handleSubmit: ComponentProps<"form">["onSubmit"] = (e) => {
     e.preventDefault();
     const text = e.currentTarget.text.value;
@@ -24,7 +24,6 @@ const add = () => {
 
   return (
     <div className='text-center'>
-      <Header />
       <h3 className='font-bold text-4xl mt-6'>TODO追加</h3>
         <form className='flex mx-96 pt-6' onSubmit={handleSubmit}>
           <FormControl isRequired w={300}>
@@ -36,4 +35,4 @@ const add = () => {
   )
 }
 
-export default add
+export default Add

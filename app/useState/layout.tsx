@@ -3,6 +3,7 @@
 import { useState } from "react";
 import type { Todo } from "./types";
 import Page from "./page";
+import Add from "./todo-add/page";
 
 const TODOS: Todo[] = [
   { id: 1, text: "foo1", isDone: false },
@@ -17,8 +18,9 @@ export default function RootLayout({
   const [todos, setTodos] = useState<Todo[]>(TODOS);
 
   return (
-      <body>
-        <Page todos={todos} setTodos={setTodos}/>
-      </body>
+    <div>
+      <Page todos={todos} setTodos={setTodos}/>
+      <Add setTodos={setTodos}/>
+    </div>
   );
 }
