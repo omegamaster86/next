@@ -1,17 +1,15 @@
 'use client'
 
 import type React from 'react'
-import { Header } from './components/header'
 import type { NextPage } from 'next';
 import type { Todo } from './types';
 
 type Props = {
   todos: Todo[];
   setTodos: React.Dispatch<React.SetStateAction<Todo[]>>;
-  todoCount: number;
 }
 
-const page: NextPage<Props> = ({todos, setTodos, todoCount}) => {
+const page: NextPage<Props> = ({todos, setTodos}) => {
   const toggleIsDone = (id: Todo["id"]) => {
     setTodos(prevTodo =>{
       return prevTodo.map((todo) => {
@@ -28,7 +26,6 @@ const page: NextPage<Props> = ({todos, setTodos, todoCount}) => {
 
   return (
     <div>
-      <Header todoCount={todoCount}/>
       <h3 className='font-bold text-4xl text-center mt-6'>TODO一覧</h3>
       {todos.map((todo) => (
         <div key={todo.id} className='text-center'>

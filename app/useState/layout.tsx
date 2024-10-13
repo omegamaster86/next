@@ -1,26 +1,28 @@
 'use client'
 
-import { useState } from "react";
+import { useState, ReactElement } from "react";
 import type { Todo } from "./types";
-import Page from "./page";
+import React from "react";
 import Add from "./todo-add/page";
+import Page from "./page";
+import { Layout } from "./components/layout";
 
 const TODOS: Todo[] = [
   { id: 1, text: "foo1", isDone: false },
   { id: 2, text: "foo2", isDone: true },
 ];
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+interface LayoutProps {
+  children: ReactElement<{ todos: Todo[]; setTodos: React.Dispatch<React.SetStateAction<Todo[]>> }> | null;
+}
+
+export default function RootLayout({ children }: LayoutProps) {
   const [todos, setTodos] = useState<Todo[]>(TODOS);
 
   return (
-    <div>
-      <Page todos={todos} setTodos={setTodos}/>
-      <Add setTodos={setTodos}/>
-    </div>
+    <Layout todoCount={todos.length}>
+       <Page todos={todos} setTodos={setTodos} />
+       <Add setTodos={setTodos}/>
+    </Layout>
   );
 }
