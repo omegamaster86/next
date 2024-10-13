@@ -17,10 +17,8 @@ export default function RootLayout({
   const [todos, setTodos] = useState<Todo[]>(TODOS);
 
   return (
-    <html lang='en'>
       <body>
         <Page todos={todos} setTodos={setTodos}/>
       </body>
-    </html>
   );
 }
