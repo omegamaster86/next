@@ -27,7 +27,7 @@ const page: NextPage<Props> = ({todos, setTodos}) => {
 
   return (
     <div>
-      <Header />
+      <Header todoCount={todos.length}/>
       <h3 className='font-bold text-4xl text-center mt-6'>TODO一覧</h3>
       {todos.map((todo) => (
         <div key={todo.id} className='text-center'>
