@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import React, {type FC} from 'react'
+import { TodoCounter } from './todoCounter'
 
 type Props = {
   todoCount: number;
@@ -17,7 +18,7 @@ export const Header: FC<Props> = ({ todoCount }) => {
           <Link href={"/useState/todo-add"}>TODO追加</Link>
         </h1> */}
       </div>
-      <h2 className='font-bold text-center'>TODO: {todoCount}件</h2>
+      <TodoCounter todoCount={todoCount} />
     </>
   )
 }
