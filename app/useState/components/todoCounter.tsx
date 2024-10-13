@@ -5,5 +5,5 @@ type Props = {
 };
 
 export const TodoCounter: FC<Props> = ({ todoCount }) => {
-  return <h2>TODO: {todoCount}件</h2>;
+  return <h2 className="text-center font-bold text-3xl">TODO: {todoCount}件</h2>;
 };
