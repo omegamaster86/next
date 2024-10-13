@@ -5,18 +5,12 @@ import { Header } from './components/header'
 import type { NextPage } from 'next';
 import type { Todo } from './types';
 
-// const TODOS: Todo[] = [
-//   { id: 1, text: "foo1", isDone: false },
-//   { id: 2, text: "foo2", isDone: true },
-// ];
-
 type Props = {
   todos: Todo[];
   setTodos: React.Dispatch<React.SetStateAction<Todo[]>>;
 }
 
 const page: NextPage<Props> = ({todos, setTodos}) => {
-  // const [todos, setTodos] = useState<Todo[]>(TODOS);
   const toggleIsDone = (id: Todo["id"]) => {
     setTodos(prevTodo =>{
       return prevTodo.map((todo) => {
