@@ -18,12 +18,21 @@
 	"organizeImports": {
 		"enabled": true
 	},
-	"linter": {
-		"enabled": true,
-		"rules": {
-			"recommended": true
-		}
-	},
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "nursery": {
+        "useSortedClasses": {
+          "level": "warn",
+          "options": {
+            "attributes": ["classList"],
+            "functions": ["clsx", "cva", "tw"]
+          }
+        }
+      }
+    }
+  },
 	"javascript": {
 		"formatter": {
 			"quoteStyle": "double"
