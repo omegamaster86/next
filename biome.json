@@ -11,26 +11,17 @@
 	},
 	"formatter": {
 		"enabled": true,
-		"indentStyle": "space"
+		"indentStyle": "tab"
 	},
 	"organizeImports": {
 		"enabled": true
 	},
-  "linter": {
-    "enabled": true,
-    "rules": {
-      "recommended": true,
-      "nursery": {
-        "useSortedClasses": {
-          "level": "warn",
-          "options": {
-            "attributes": ["classList"],
-            "functions": ["clsx", "cva", "tw"]
-          }
-        }
-      }
-    }
-  },
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true
+		}
+	},
 	"javascript": {
 		"formatter": {
 			"quoteStyle": "double"
