@@ -5,20 +5,6 @@ import { ComponentProps, useActionState, useState } from "react";
 type Product = { title: string; price: number };
 
 export default function Page() {
-  // const [products, setProducts] = useState<Product[]>([]);
-  // const [isPending, setIsPending] = useState(false);
-  // const handleSubmit: ComponentProps<"form">["onSubmit"] = async (e) => {
-  //   e.preventDefault();
-  //   setProducts([]);
-  //   const query = e.currentTarget.query.value;
-  //   if (!query) {
-  //     return;
-  //   }
-  //   setIsPending(true);
-  //   const products = await searchProducts(query);
-  //   setProducts(products);
-  //   setIsPending(false);
-  // };
 
   const [products, dispatch, isPending] = useActionState(
     async (_prev: Product[], formData: FormData) => {

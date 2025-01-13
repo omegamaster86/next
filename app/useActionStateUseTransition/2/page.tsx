@@ -7,15 +7,6 @@ type Product = { title: string; price: number };
 export default function Page() {
   const [product, setProduct] = useState<Product | null>(null);
 
-  // const [isPending, setIsPending] = useState(false);
-  // const handleClick = async () => {
-  //   setProduct(null);
-  //   setIsPending(true);
-  //   const product = await getRandomProduct();
-  //   setProduct(product);
-  //   setIsPending(false);
-  // };
-
   const [isPending, startTransition] = useTransition();
   const handleClick = () => {
     setProduct(null);
