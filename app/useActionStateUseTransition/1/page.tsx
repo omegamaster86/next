@@ -69,7 +69,6 @@ const HeavyTab = memo(function HeavyTab() {
   return (
     <ul>
       {Array.from({ length: 1000 }, (_, i) => (
-        // biome-ignore lint/suspicious/noArrayIndexKey:
         <SlowListItem key={i} index={i} />
       ))}
     </ul>
